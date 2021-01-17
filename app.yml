@@ -16,4 +16,4 @@ spec:
       - name: my-image
         image: appregistry60.azurecr.io/ajoexpressapp:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 80
