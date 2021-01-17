@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: my-ingress-service
 spec:
   type: LoadBalancer
   ports:
-  - port: 3000
+  - port: 80
+  - target port: 3000
   selector:
     app: my-app
