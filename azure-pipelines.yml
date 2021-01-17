@@ -36,4 +36,21 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
+          latest
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: ''
+        Contents: |
+          app.yml
+          service.yml
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+ 
+    - task: KubernetesManifest@0
+      inputs:
+        action: 'deploy'
+        manifests: |
+           $(Build.ArtifactStagingDirectory)/app.yml
+           $(Build.ArtifactStagingDirectory)/service.yml
+        kubernetesServiceConnection: 'cluster-default'
+        containers: |
+          appregistry60.azurecr.io/ajoexpressapp:latest
