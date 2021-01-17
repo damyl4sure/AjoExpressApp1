@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ajoexpressapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ajoexpressapp
+  template:
+    metadata:
+      labels:
+        app: ajoexpressapp 
+    spec:
+      containers:
+        - name: ajoexpressapp 
+          image: appregistry60.azurecr.io/ajoexpressapp
+          ports:
+          - containerPort: 3000
