@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: my-image
-        image: appregistry60.azurecr.io/realeasedockerapp:latest
+        image: appregistry60.azurecr.io/ajoexpressapp:latest
         ports:
         - containerPort: 80
