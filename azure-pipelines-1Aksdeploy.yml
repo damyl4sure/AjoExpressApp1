@@ -13,7 +13,7 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '262f7fe7-ae40-46b3-bf58-abef161937b3'
   imageRepository: 'ajoexpressapp'
-  containerRegistry: 'appregistry60.azurecr.io'
+  containerRegistry: 'appregistry60.azurecr.io/ajoexpressapp:latest'
   dockerfilePath: '**/Dockerfile'
   tag: 'latest'
   imagePullSecret: 'appregistry601606f219-auth'
